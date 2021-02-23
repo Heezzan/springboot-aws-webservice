@@ -1,0 +1,66 @@
+//buildscript {
+//    // build.gradle에서 사용하는 전역변수들을 설정할거야
+//    ext {
+//        springBootVersion = '2.1.7 RELEASE'
+//    }
+//    repositories {
+//        mavenCentral()
+//        jcenter()
+//    }
+//    dependencies {
+//        classpath("org.springfamework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+//    }
+//}
+
+plugins {
+    id 'org.springframework.boot' version '2.4.1'
+    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+    id 'java'
+}
+
+//apply plugin: 'java'
+//apply plugin: 'eclipse'
+//apply plugin: 'org.springframework.boot'
+//apply plugin: 'io.spring.dependecy-management'  // 스프링 부트의 의존성 관리 플러그인
+
+group 'com.hz.saw'
+//version '1.0-SNAPSHOT'
+version '1.0.4-SNAPSHOT-'+new Date().format("yyyyMMddHHmmss")
+sourceCompatibility = 1.8
+
+// 각종 의존성 (라이브러리)들을 어떤 원격 저장소에서 받을지 지정
+repositories {
+    mavenCentral()   // 기본적으로 사용
+    jcenter()       // mavenCentral에 라이브러리를 업로드를 하기 위해 많은 과정, 설정이 필요하기 때문에
+                    // 이런 문제를 해결하여 jcenter은 라이브러리 업로드를 간단하게 할 수 있어 최근 많이 사용
+                    // jcenter에 업로드 시 mavenCentral에도 업로드 할 수 있음
+}
+
+// JUni5를 사용하기 위해 필수로 선언해야 함
+test {
+    useJUnitPlatform()
+}
+
+// 프로젝트 개발에 필요한 의존성들 선언
+// Gradle 6이 되면서 compile, testCompile은 Soft Deprecate되었고, implementation, testImplementation이 추가
+dependencies {
+//    compile('org.springframework.boot:spring-boot-starter-web')
+//    testCompile('org.springframework.boot:spring-boot-starter-test')
+    implementation('org.springframework.boot:spring-boot-starter-web')
+}
+
+// 아래는 프로젝트 처음 생성 시 원본 내용
+//plugins {
+//    id 'java'
+//}
+//
+//group 'com.hz.saw'
+//version '1.0-SNAPSHOT'
+//
+//repositories {
+//    mavenCentral()
+//}
+//
+//dependencies {
+//    testCompile group: 'junit', name: 'junit', version: '4.12'
+//}

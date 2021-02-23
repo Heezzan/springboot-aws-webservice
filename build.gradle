@@ -47,6 +47,7 @@ dependencies {
 //    compile('org.springframework.boot:spring-boot-starter-web')
 //    testCompile('org.springframework.boot:spring-boot-starter-test')
     implementation('org.springframework.boot:spring-boot-starter-web')
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
 
 // 아래는 프로젝트 처음 생성 시 원본 내용

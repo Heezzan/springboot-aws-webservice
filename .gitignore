@@ -123,3 +123,4 @@ $RECYCLE.BIN/
 *.lnk
 
 application-oauth.properties
+application-real-db.properties

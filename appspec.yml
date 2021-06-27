@@ -3,7 +3,6 @@ version: 0.0
 os: linux
 files:
   # CodeDeploy에서 전달해 준 파일 중 destination으로 이동시킬 대상 지정
-  - source:
-      # source에서 지정된 파일을 받을 위치
-      destination: /home/ec2-user/app/step2/zip/
-      overwrite: yes
+  - source: /
+    destination: /home/ec2-user/app/step2/zip/ # source에서 지정된 파일을 받을 위치
+    overwrite: yes
